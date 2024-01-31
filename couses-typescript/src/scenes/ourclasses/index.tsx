@@ -42,7 +42,7 @@ const classes: Array<ClassType> = [
 ]
 
 type Props = {
-    setSelectedPage: (value: SelectedPage.OurClasses) => void
+    setSelectedPage: (value: SelectedPage) => void;
 }
 
 const OurClasses = ({setSelectedPage}: Props) => {
