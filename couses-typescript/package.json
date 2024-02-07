@@ -12,10 +12,12 @@
   "dependencies": {
     "@heroicons/react": "^2.1.1",
     "framer-motion": "^10.17.12",
+    "i18next": "^23.8.2",
     "react": "^18.2.0",
     "react-anchor-link-smooth-scroll": "^1.0.12",
     "react-dom": "^18.2.0",
-    "react-hook-form": "^7.49.3"
+    "react-hook-form": "^7.49.3",
+    "react-i18next": "^14.0.4"
   },
   "devDependencies": {
     "@types/node": "^20.10.7",

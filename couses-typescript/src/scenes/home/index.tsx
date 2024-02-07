@@ -1,13 +1,15 @@
 import { SelectedPage } from '@/shared/types'
 import useMediaQuery from '@/hooks/useMediaQuery'
 import ActionButton from '@/shared/ActionButton'
-import HomePageText from "@/assets/HomePageText.png"
+import HomePageTextRo from "@/assets/ro/HomePageText.png"
+import HomePageTextEN from "@/assets/en/HomePageText.png"
 import HomePageGraphic from "@/assets/HomePageGraphic.png"
 import SponsorRedBull from "@/assets/SponsorRedBull.png"
 import SponsorForbes from "@/assets/SponsorForbes.png"
 import SponsorFortune from "@/assets/SponsorFortune.png"
 import AnchorLink from 'react-anchor-link-smooth-scroll'
 import { motion } from 'framer-motion'
+import { useTranslation } from 'react-i18next';
 
 
 type Props = {
@@ -16,6 +18,9 @@ type Props = {
 
 const Home = ({setSelectedPage}: Props) => {
   const isAboveMediumScreens = useMediaQuery("(min-width:1060px)")
+  const { t, i18n } = useTranslation();
+  const languageFolder = i18n.language || 'en';
+  const imageSrc = 'ro' == languageFolder ? HomePageTextRo : HomePageTextEN
 
 
   return (
@@ -45,14 +50,12 @@ const Home = ({setSelectedPage}: Props) => {
                 >
                     <div className="relative">
                         <div className="before:absolute before:-top-20 before:-left-20 before:z-[-1] md:before:content-evolvetext">
-                            <img alt="home-page-text" src={HomePageText}/>
+                            <img alt="home-page-text" src={imageSrc}/>
                         </div>
                     </div>
                     
                     <p className="mt-8 text-sm">
-                        Unrivalled Gym. Unparalled Training Fitness classes World Class
-                        Studios to get the Body Shapes That you Dream of.. Get Your Dream
-                        Body Now
+                        {t(`home.textMessage`)}
                     </p>
                 </motion.div>
 
@@ -69,14 +72,14 @@ const Home = ({setSelectedPage}: Props) => {
                     }}
                 >
                     <ActionButton setSelectedPage={setSelectedPage}>
-                        Join Now
+                        {t(`joinNow`)}
                     </ActionButton>
                     <AnchorLink
                         className="text-sm font-bold text-primary-500 underline hover:text-secondary-500"
-                        onClick={() => setSelectedPage(SelectedPage.ContactUs)}
-                        href={`#${SelectedPage.ContactUs}`}
+                        onClick={() => setSelectedPage(SelectedPage.OurClasses)}
+                        href={`#${SelectedPage.OurClasses}`}
                     >
-                        <p>Learn More</p>
+                        <p> {t(`learnMore`)}</p>
                     </AnchorLink>
                 </motion.div>
             </div>

@@ -5,6 +5,8 @@ import Link from "./Link";
 import { SelectedPage } from "@/shared/types"
 import useMediaQuery from "@/hooks/useMediaQuery";
 import ActionButton from "@/shared/ActionButton";
+import { useTranslation } from 'react-i18next';
+
 
 type Props = {
     isTopOfPage: boolean;
@@ -17,6 +19,7 @@ const Navbar = ({isTopOfPage, selectedPage, setSelectedPage}: Props) => {
     const [isMenuToggled, setIsMenuToggled] = useState<boolean>(false);
     const isAboveMediumScreen = useMediaQuery("(min-width: 1060px)")
     const navbarBackground = isTopOfPage ? "" : "bg-primary-100 drop-shadow";
+    const { t } = useTranslation();
 
     return <nav>
         <div className={`${navbarBackground} ${flexBetween} fixed top-0 z-30 w-full py-6`}>
@@ -30,15 +33,14 @@ const Navbar = ({isTopOfPage, selectedPage, setSelectedPage}: Props) => {
                         <div className={`${flexBetween} w-full`}>
                             <div className={`${flexBetween} gap-8 text-sm`}>
                                 <Link page="Home" selectedPage={selectedPage} setSelectedPage={setSelectedPage}/>
-                                <Link page="About" selectedPage={selectedPage} setSelectedPage={setSelectedPage}/>
                                 <Link page="Benefits" selectedPage={selectedPage} setSelectedPage={setSelectedPage}/>
                                 <Link page="Our classes" selectedPage={selectedPage} setSelectedPage={setSelectedPage}/>
                                 <Link page="Contact Us" selectedPage={selectedPage} setSelectedPage={setSelectedPage}/>
                             </div>
                             <div className={`${flexBetween} gap-8`}>
-                                <p>Sign In</p>
+                                <p>{t(`signIn`)}</p>
                                 <ActionButton setSelectedPage={setSelectedPage}>
-                                    Become a member
+                                    {t(`becomeMember`)}
                                 </ActionButton>
                             </div>
                         </div>
@@ -69,7 +71,6 @@ const Navbar = ({isTopOfPage, selectedPage, setSelectedPage}: Props) => {
                 {/* MENU ITEMS */}
                 <div className="ml-[33%] flex flex-col gap-10 text-2xml">
                     <Link page="Home" selectedPage={selectedPage} setSelectedPage={setSelectedPage}/>
-                    <Link page="About" selectedPage={selectedPage} setSelectedPage={setSelectedPage}/>
                     <Link page="Benefits" selectedPage={selectedPage} setSelectedPage={setSelectedPage}/>
                     <Link page="Our classes" selectedPage={selectedPage} setSelectedPage={setSelectedPage}/>
                     <Link page="Contact Us" selectedPage={selectedPage} setSelectedPage={setSelectedPage}/>
