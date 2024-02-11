@@ -9,24 +9,7 @@ import { motion } from "framer-motion";
 import Benefit from "./Benefit";
 import ActionButton from "@/shared/ActionButton";
 import BenefitsPageGraphic from "@/assets/BenefitsPageGraphic.png"
-
-const benefits: Array<BenefitType> = [
-    {
-        icon: <HomeModernIcon className="h-6 w-6" />,
-        title: "State of the Art Facilities",
-        description: "Aasd dsafsa dfasf njkdsfas dfsaf afdsafas fdsfasdf a."
-    },
-    {
-        icon: <UserGroupIcon className="h-6 w-6" />,
-        title: "Hundreds of Dive3rse Classes",
-        description: "Aasd dsafsa dfasf njkdsfas dfsaf afdsafas fdsfasdf adf as fdsabnvcsdf fsafa. dfasdf fdsafadf fdsa.."
-    },
-    {
-        icon: <AcademicCapIcon className="h-6 w-6" />,
-        title: "Expert and Pro Trainers.",
-        description: "Aasd dsafsa dfasf."
-    },
-]
+import { useTranslation } from 'react-i18next';
 
 const container = {
     hidden: {},
@@ -40,6 +23,41 @@ type Props = {
 }
 
 const Benefits = ({setSelectedPage}: Props) => {
+  const { t } = useTranslation();
+
+  const benefits: Array<BenefitType> = [
+    {
+        icon: <AcademicCapIcon className="h-6 w-6" />,
+        title: t(`benefits.one.title`),
+        description:  t(`benefits.one.description`),
+    },
+    {
+        icon: <HomeModernIcon className="h-6 w-6" />,
+        title: t(`benefits.two.title`),
+        description:  t(`benefits.two.description`),
+    },
+    {
+        icon: <UserGroupIcon className="h-6 w-6" />,
+        title: t(`benefits.three.title`),
+        description:  t(`benefits.three.description`),
+    },
+    {
+        icon: <UserGroupIcon className="h-6 w-6" />,
+        title: t(`benefits.four.title`),
+        description:  t(`benefits.four.description`),
+    },
+    {
+        icon: <UserGroupIcon className="h-6 w-6" />,
+        title: t(`benefits.five.title`),
+        description:  t(`benefits.five.description`),
+    },
+    {
+        icon: <UserGroupIcon className="h-6 w-6" />,
+        title: t(`benefits.six.title`),
+        description:  t(`benefits.six.description`),
+    }
+]
+
   return <section
     id="benefits"
     className="mx-auto min-h-full w-5/6 py-20"
@@ -59,12 +77,7 @@ const Benefits = ({setSelectedPage}: Props) => {
                 visible: { opacity: 1, x: 0},
             }}
         >
-            <HText>MORE THAN JUST A GYM.</HText>
-            <p className="my-5 text-sm">
-                We provide world class fitness equipment, trainers and classes to 
-                get you to your ultimate fitness goals with ease. We provide true 
-                care into each and every member
-            </p>
+            <HText>{t(`benefits.title`)}</HText>
         </motion.div>
 
         {/* BENEFITS */}
@@ -111,15 +124,15 @@ const Benefits = ({setSelectedPage}: Props) => {
                             }}
                         >
                             <HText>
-                                MILLIONS OF HAPPY MEMBERS GETTING {" "}
-                                <span className="text-primary-500">FIT</span>
+                                {t(`benefits.text.title.partOne`)}{" "}
+                                <span className="text-primary-500"> {t(`benefits.text.title.partTwo`)}</span>
+                                {" "}  {t(`benefits.text.title.partThree`)} 
                             </HText>
                         </motion.div>
                     </div>
                 </div>
 
                 {/* DESCRIPTION */}
-
                 <motion.div
                     initial="hidden"
                     whileInView="visible"
@@ -131,10 +144,11 @@ const Benefits = ({setSelectedPage}: Props) => {
                     }}
                 >
                     <p className="my-5">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec aliquam, elit id hendrerit ornare, lectus leo commodo est, a porttitor nunc massa in lacus. Phasellus vehicula viverra vehicula. Sed ultricies rhoncus est, sed consectetur risus euismod a. Praesent pellentesque, ex et commodo rhoncus, tortor mi ornare risus, eget dapibus mi lacus eu quam. Duis urna ligula, mollis vel mattis sit amet, dictum at leo. Proin rutrum nulla at velit iaculis, non condimentum felis dapibus. Nam rutrum dui nec sapien facilisis ultricies.
+                        {t(`benefits.text.paragraph.one`)}
+                        
                     </p>
                     <p className="mb-5">
-                        Sed blandit, lorem at finibus mollis, mi leo ultrices nisi, sed pretium eros libero eget justo. Phasellus urna leo, gravida vel mi quis, lobortis iaculis sapien. Donec luctus dapibus purus nec ultricies. Praesent fermentum nisi vel urna bibendum lobortis. Mauris varius eu nibh eu semper. Vivamus accumsan hendrerit iaculis. Pellentesque sit amet leo dapibus, luctus sapien dapibus, consectetur ante. Fusce in lacus sed ante interdum faucibus et dictum leo. Sed nec sollicitudin risus. Morbi dapibus lacus in sem vehicula efficitur. Sed vulputate consectetur velit, vitae accumsan libero commodo a. Praesent mi nisl, ullamcorper id ex ut, dictum tempus turpis. Sed accumsan mollis lectus, at ornare elit consequat vitae. Donec vitae scelerisque metus.
+                        {t(`benefits.text.paragraph.two`)}
                     </p>
                 </motion.div>
 
@@ -142,7 +156,7 @@ const Benefits = ({setSelectedPage}: Props) => {
                 <div className="relative mt-16">
                     <div className="before:absolute before:-botton-20 before:right-40 before:z-[1] before:content-sparkes">
                         <ActionButton setSelectedPage={setSelectedPage}>
-                            JOIN NOW
+                            {t(`joinNow`)}
                         </ActionButton>
                     </div>
 
