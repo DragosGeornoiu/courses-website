@@ -7,6 +7,9 @@
     "becomeMember": "Devin-o membru",
     "joinNow": "Alatura-te acum",
     "learnMore": "Detalii",
+    "name": "NUME",
+    "message": "MESAJ",
+    "submit": "TRIMITE",
     "home.textMessage": "Cursuri special gandite pentru copii de catre specialisti in domeniu.",
     "benefits.title": "Ce oferim?",
     "benefits.one.title": "Instruitori Experimentați",
@@ -33,7 +36,8 @@
     "ourclasses.class.five.description": "În această clasă, copiii folosesc o varietate de instrumente de programare proiectate pentru tinerii învățăcei pentru a crea proiecte unice și imaginative. De la povești animate la artă interactivă, această clasă încurajează exprimarea creativă prin cod.",
     "ourclasses.class.tbd.name": "De Anunțat",
     "ourclasses.title": "CLASELE NOASTRE",
-    "ourclasses.paragraph": "Bucură-te de călătorii captivante în lumea cunoașterii prin clasele noastre specializate! De la module de programare în Scratch, care fac primii pași în universul codului, până la aventuri interactive în robotică sau creații artistice digitale, fiecare clasă este o ocazie de explorare și învățare plăcută. Oferim lecții diversificate, adaptate vârstei și intereselor, încurajând creativitatea, gândirea critică și dezvoltarea abilităților practice. Așteptăm cu nerăbdare să le oferim copiilor noștri o experiență educațională încântătoare și să-i ghidăm în descoperirea pasiunilor lor."
-    
+    "ourclasses.paragraph": "Bucură-te de călătorii captivante în lumea cunoașterii prin clasele noastre specializate! De la module de programare în Scratch, care fac primii pași în universul codului, până la aventuri interactive în robotică sau creații artistice digitale, fiecare clasă este o ocazie de explorare și învățare plăcută. Oferim lecții diversificate, adaptate vârstei și intereselor, încurajând creativitatea, gândirea critică și dezvoltarea abilităților practice. Așteptăm cu nerăbdare să le oferim copiilor noștri o experiență educațională încântătoare și să-i ghidăm în descoperirea pasiunilor lor.",
+    "contactus.paragraph": "Descoperă oportunitățile de învățare captivante pentru copilul tău. Alătură-te acum și pregătește-l pentru o călătorie plină de descoperiri și succes! Pentru detalii suplimentare și înscrieri, contactează-ne la adresa de e-mail sau numărul de telefon de mai jos."
+
   }
   

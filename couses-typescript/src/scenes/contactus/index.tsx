@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import { useForm } from "react-hook-form";
 import ContactUsPageGraphic from "@/assets/ContactUsPageGraphic.png"
 import HText from "@/shared/HText";
+import { useTranslation } from 'react-i18next';
 
 type Props = {
     setSelectedPage: (value: SelectedPage) => void;
@@ -10,7 +11,7 @@ type Props = {
 }
 
 function ContactUs({ setSelectedPage }: Props) {
-
+  const { t } = useTranslation();
   const inputStyles = `mb-5 w-full rounded-lg bg-primary-300 px-5 py-3 placeholder-white`;
   
   const {
@@ -46,9 +47,9 @@ function ContactUs({ setSelectedPage }: Props) {
                 }}
             >
                 <HText>
-                    <span className="text-primary-500">JOIN NOW</span> TO GET IN SHAPE
+                    <span className="text-primary-500">{t(`joinNow`)}</span>
                 </HText>
-                <p className="my-5">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec aliquam, elit id hendrerit ornare, lectus leo commodo est, a porttitor nunc massa in lacus. Phasellus vehicula viverra vehicula. Sed ultricies rhoncus est, sed.</p>
+                <p className="my-5">{t(`contactus.paragraph`)}</p>
             </motion.div>
 
             {/* FORM AND IMAGE */}
@@ -73,7 +74,7 @@ function ContactUs({ setSelectedPage }: Props) {
                         <input 
                             className={inputStyles}
                             type="text"
-                            placeholder="NAME"
+                            placeholder={t(`name`)}
                             {...register("name", {
                                 required: true,
                                 maxLength: 100
@@ -106,7 +107,7 @@ function ContactUs({ setSelectedPage }: Props) {
                             className={inputStyles}
                             rows={4}
                             cols={50}
-                            placeholder="MESSAGE"
+                            placeholder={t(`message`)}
                             {...register("message", {
                                 required: true,
                                 maxLength: 2000
@@ -123,7 +124,7 @@ function ContactUs({ setSelectedPage }: Props) {
                             type="submit"
                             className="mt-5 rounded-lg bg-secondary-500 px-20 py-3 transition duration-500 hover:text-white"
                         >
-                            SUBMIT
+                            {t(`submit`)}
                         </button>
                     </form>
                 </motion.div>

@@ -7,6 +7,9 @@
     "becomeMember": "Become a member",
     "joinNow": "Join Now",
     "learnMore": "Learn More",
+    "name": "NAME",
+    "message": "MESSAGE",
+    "submit": "SUBMIT",
     "home.textMessage": "Courses specially designed for children by specialists in the field.",
     "benefits.title": "What we offer?",
     "benefits.one.title": "Experienced Trainers",
@@ -38,7 +41,7 @@
     "ourclasses.class.five.description": "In this class, kids use a variety of programming tools designed for young learners to create unique and imaginative projects. From animated stories to interactive art, this class encourages creative expression through coding.",
     "ourclasses.class.tbd.name": "To BE ANNOUNCED",
     "ourclasses.title": "OUR CLASSES",
-    "ourclasses.paragraph": "Embark on engaging journeys into the world of knowledge through our specialized classes! From introductory coding modules in Scratch, taking the first steps into the coding universe, to interactive adventures in robotics or digital artistic creations, each class is an opportunity for exploration and enjoyable learning. We provide a diverse range of lessons tailored to age and interests, fostering creativity, critical thinking, and practical skill development. We look forward to providing our children with an enchanting educational experience and guiding them in the discovery of their passions."
-    
+    "ourclasses.paragraph": "Embark on engaging journeys into the world of knowledge through our specialized classes! From introductory coding modules in Scratch, taking the first steps into the coding universe, to interactive adventures in robotics or digital artistic creations, each class is an opportunity for exploration and enjoyable learning. We provide a diverse range of lessons tailored to age and interests, fostering creativity, critical thinking, and practical skill development. We look forward to providing our children with an enchanting educational experience and guiding them in the discovery of their passions.",
+    "contactus.paragraph": "Explore exciting learning opportunities for your child. Join now and prepare them for a journey filled with discoveries and success! For more details and registrations, reach out to us at the email address or phone number below."
   }
   
