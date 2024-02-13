@@ -8,45 +8,49 @@ import image6 from "@/assets/image6.png"
 import { motion } from 'framer-motion'
 import HText from '@/shared/HText'
 import Class from './Class'
+import { useTranslation } from 'react-i18next';
  
-
-const classes: Array<ClassType> = [
-    {
-        name: "Weight Training Classes",
-        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec aliquam, elit id hendrerit ornare, lectus leo commodo est, a porttitor nunc massa in lacus. Phasellus vehicula viverra vehicula. Sed ultricies rhoncus est, sed.",
-        image: image1,
-    },
-    {
-        name: "Yoga Classes",
-        image: image2,
-    },
-    {
-        name: "Ab core Classes",
-        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec aliquam, elit id hendrerit ornare, lectus leo commodo est, a porttitor nunc massa in lacus. Phasellus vehicula viverra vehicula. Sed ultricies rhoncus est, sed.",
-        image: image3,
-    },
-    {
-        name: "Adventure Classes",
-        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec aliquam, elit id hendrerit ornare, lectus leo commodo est, a porttitor nunc massa in lacus. Phasellus vehicula viverra vehicula. Sed ultricies rhoncus est, sed.",
-        image: image4,
-    },
-    {
-        name: "Fitness Classes",
-        image: image5,
-    },
-    {
-        name: "Training Classes",
-        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec aliquam, elit id hendrerit ornare, lectus leo commodo est, a porttitor nunc massa in lacus. Phasellus vehicula viverra vehicula. Sed ultricies rhoncus est, sed.",
-        image: image6,
-    }
-]
 
 type Props = {
     setSelectedPage: (value: SelectedPage) => void;
 }
 
 const OurClasses = ({setSelectedPage}: Props) => {
-  return <section id="ourclasses" className='w-full bg-primary-100 py-40'>
+    const { t } = useTranslation();    
+    <p>{t(`learnMore`)}</p>
+    const classes: Array<ClassType> = [
+        {
+            name: t(`ourclasses.class.one.name`),
+            description: t(`ourclasses.class.one.description`),
+            image: image1,
+        },
+        {
+            name: t(`ourclasses.class.two.name`),
+            description: t(`ourclasses.class.two.description`),
+            image: image2,
+        },
+        {
+            name: t(`ourclasses.class.three.name`),
+            description: t(`ourclasses.class.three.description`),
+            image: image3,
+        },
+        {
+            name: t(`ourclasses.class.four.name`),
+            description: t(`ourclasses.class.four.description`),
+            image: image4,
+        },
+        {
+            name: t(`ourclasses.class.five.name`),
+            description: t(`ourclasses.class.five.description`),
+            image: image5,
+        },
+        {
+            name: t(`ourclasses.class.tbd.name`),
+            image: image6,
+        }
+    ]
+
+    return <section id="ourclasses" className='w-full bg-primary-100 py-40'>
     <motion.div
         onViewportEnter={() => setSelectedPage(SelectedPage.OurClasses)}
     >
@@ -62,9 +66,9 @@ const OurClasses = ({setSelectedPage}: Props) => {
             }}
         >
             <div className='md:w-3/5'>
-                <HText>OUR CLASSES</HText>
+                <HText>{t(`ourclasses.title`)}</HText>
                 <p className='py-5'>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec aliquam, elit id hendrerit ornare, lectus leo commodo est, a porttitor nunc massa in lacus. Phasellus vehicula viverra vehicula. Sed ultricies rhoncus est, sed c.
+                {t(`ourclasses.paragraph`)}
                 </p>
             </div>
 
@@ -85,7 +89,7 @@ const OurClasses = ({setSelectedPage}: Props) => {
         </div>
     </motion.div>
 
-  </section>
+    </section>
 }
 
 export default OurClasses
