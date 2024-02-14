@@ -10,6 +10,7 @@
     "name": "NAME",
     "message": "MESSAGE",
     "submit": "SUBMIT",
+    "phoneNumber": "(+40) 777 777 777",
     "home.textMessage": "Courses specially designed for children by specialists in the field.",
     "benefits.title": "What we offer?",
     "benefits.one.title": "Experienced Trainers",
@@ -42,6 +43,14 @@
     "ourclasses.class.tbd.name": "To BE ANNOUNCED",
     "ourclasses.title": "OUR CLASSES",
     "ourclasses.paragraph": "Embark on engaging journeys into the world of knowledge through our specialized classes! From introductory coding modules in Scratch, taking the first steps into the coding universe, to interactive adventures in robotics or digital artistic creations, each class is an opportunity for exploration and enjoyable learning. We provide a diverse range of lessons tailored to age and interests, fostering creativity, critical thinking, and practical skill development. We look forward to providing our children with an enchanting educational experience and guiding them in the discovery of their passions.",
-    "contactus.paragraph": "Explore exciting learning opportunities for your child. Join now and prepare them for a journey filled with discoveries and success! For more details and registrations, reach out to us at the email address or phone number below."
+    "contactus.paragraph": "Explore exciting learning opportunities for your child. Join now and prepare them for a journey filled with discoveries and success! For more details and registrations, reach out to us at the email address or phone number below.",
+    "footer.paragraph": "Empowering young minds through interactive and fun learning experiences, our website fosters a love for knowledge in a safe and engaging environment. Join us in shaping a brighter future for your child's education.",
+    "footer.copyright": "© All rights reserved."    ,
+    "footer.link.title": "Links",
+    "footer.link.first": "First Link",
+    "footer.link.second": "Second Link",
+    "footer.link.third": "Third link",
+    "footer.contactus.title": "Contact Us",
+    "footer.contactus.paragraph.first": "For detailed inquiries please call the followin number:"
   }
   

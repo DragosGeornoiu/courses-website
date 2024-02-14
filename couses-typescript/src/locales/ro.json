@@ -10,6 +10,7 @@
     "name": "NUME",
     "message": "MESAJ",
     "submit": "TRIMITE",
+    "phoneNumber": "(+40) 777 777 777",
     "home.textMessage": "Cursuri special gandite pentru copii de catre specialisti in domeniu.",
     "benefits.title": "Ce oferim?",
     "benefits.one.title": "Instruitori Experimentați",
@@ -37,7 +38,14 @@
     "ourclasses.class.tbd.name": "De Anunțat",
     "ourclasses.title": "CLASELE NOASTRE",
     "ourclasses.paragraph": "Bucură-te de călătorii captivante în lumea cunoașterii prin clasele noastre specializate! De la module de programare în Scratch, care fac primii pași în universul codului, până la aventuri interactive în robotică sau creații artistice digitale, fiecare clasă este o ocazie de explorare și învățare plăcută. Oferim lecții diversificate, adaptate vârstei și intereselor, încurajând creativitatea, gândirea critică și dezvoltarea abilităților practice. Așteptăm cu nerăbdare să le oferim copiilor noștri o experiență educațională încântătoare și să-i ghidăm în descoperirea pasiunilor lor.",
-    "contactus.paragraph": "Descoperă oportunitățile de învățare captivante pentru copilul tău. Alătură-te acum și pregătește-l pentru o călătorie plină de descoperiri și succes! Pentru detalii suplimentare și înscrieri, contactează-ne la adresa de e-mail sau numărul de telefon de mai jos."
-
+    "contactus.paragraph": "Descoperă oportunitățile de învățare captivante pentru copilul tău. Alătură-te acum și pregătește-l pentru o călătorie plină de descoperiri și succes! Pentru detalii suplimentare și înscrieri, contactează-ne la adresa de e-mail sau numărul de telefon de mai jos.",
+    "footer.paragraph": "Prin experiențe interactive și distractive, încurajăm mintea copiilor, oferindu-le un mediu sigur și captivant pentru învățare. Alătură-te nouă în construirea unui viitor mai luminos pentru educația copilului tău.",
+    "footer.copyright": "© Toate drepturile rezervate.",
+    "footer.link.title": "Link-uri",
+    "footer.link.first": "Primul link",
+    "footer.link.second": "Al doilea link",
+    "footer.link.third": "Al treilea link",
+    "footer.contactus.title": "Contactează-ne",
+    "footer.contactus.paragraph.first": "Pentru întrebări detaliate vă rugăm să sunați la următorul număr:"
   }
   
