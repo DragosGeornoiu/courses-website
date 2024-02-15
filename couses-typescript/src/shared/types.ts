@@ -25,5 +25,6 @@ export interface ClassType {
   description?: string;
   image: string;
   price?: string;
+  ageInterval?: string;
   scheduledClasses?: ScheduledClass[];
 }

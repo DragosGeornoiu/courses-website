@@ -15,6 +15,7 @@ export const getClassesData = (): Array<ClassType> => {
             description: t(`ourclasses.class.one.description`),
             image: image1,
             price: t(`ourclasses.class.one.price`),
+            ageInterval: t(`ourclasses.class.one.ageInterval`),
             scheduledClasses: [
                 {
                     startDate: "2024-03-01",
@@ -80,6 +81,7 @@ export const getClassesData = (): Array<ClassType> => {
             description: t(`ourclasses.class.two.description`),
             image: image2,
             price: t(`ourclasses.class.two.price`),
+            ageInterval: t(`ourclasses.class.two.ageInterval`),
             scheduledClasses: [
                 {
                     startDate: "2024-03-15",
@@ -117,6 +119,7 @@ export const getClassesData = (): Array<ClassType> => {
             description: t(`ourclasses.class.three.description`),
             image: image3,
             price: t(`ourclasses.class.three.price`),
+            ageInterval: t(`ourclasses.class.three.ageInterval`),
             scheduledClasses: [
                 {
                     startDate: "2024-04-05",
@@ -132,6 +135,7 @@ export const getClassesData = (): Array<ClassType> => {
             description: t(`ourclasses.class.four.description`),
             image: image4,
             price: t(`ourclasses.class.four.price`),
+            ageInterval: t(`ourclasses.class.four.ageInterval`),
             scheduledClasses: [
                 {
                     startDate: "2024-04-10",
@@ -161,6 +165,7 @@ export const getClassesData = (): Array<ClassType> => {
             description: t(`ourclasses.class.five.description`),
             image: image5,
             price: t(`ourclasses.class.five.price`),
+            ageInterval: t(`ourclasses.class.five.ageInterval`),
             scheduledClasses: [
                 {
                     startDate: "2024-04-10",

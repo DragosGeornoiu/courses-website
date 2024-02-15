@@ -198,9 +198,17 @@ function Enroll({ setSelectedPage }: Props) {
                             {selectedClass.price && (
                                 <div className="mt-4">
                                     <h3 className="text-lg font-semibold mb-2">{t(`price`)}:</h3>
-                                    <p className="text-2xl text-primary-500">{selectedClass.price}</p>
+                                    <p className="text-2xl text-green-500">{selectedClass.price}</p>
                                 </div>
                             )}
+
+                            {selectedClass.ageInterval && (
+                                <div className="mt-4">
+                                    <h3 className="text-lg font-semibold mb-2">{t(`age`)}:</h3>
+                                    <p className="text-2xl text-green-500">{selectedClass.ageInterval}</p>
+                                </div>
+                            )}
+
 
                             {selectedClass.scheduledClasses && selectedClass.scheduledClasses.length > 0 && (
                                 <div className="mt-4">
