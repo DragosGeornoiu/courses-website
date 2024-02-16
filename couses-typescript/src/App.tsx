@@ -5,15 +5,12 @@ import OurClasses from "@/scenes/ourclasses"
 import Footer from "@/scenes/footer"
 import { useEffect, useState } from "react"
 import { SelectedPage } from "@/shared/types"
-import i18n from './i18n'; // Import i18n configuration
 import Enroll from "./scenes/enroll"
 
 
 function App() {
   const [selectedPage, setSelectedPage] = useState<SelectedPage>(SelectedPage.Home)
   const [isTopOfPage, setIsTopOfPage] = useState<boolean>(true);
-  console.log("i18n object:", i18n); // Log the i18n object
-
 
   useEffect(() => {
     const handleScroll = () => {
