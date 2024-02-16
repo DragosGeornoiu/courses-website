@@ -1,4 +1,4 @@
-import { ClassType, SelectedPage } from "@/shared/types"
+import { ClassType, ScheduledClass, SelectedPage } from "@/shared/types"
 import { motion } from "framer-motion";
 import { useForm } from "react-hook-form";
 import { getClassesData } from '@/shared/classes'; 
@@ -17,7 +17,11 @@ function Enroll({ setSelectedPage }: Props) {
 
     // TODO this list needs to be shared with the one in ourclasses/index.tsx
     const classes = getClassesData();
-  const [selectedClass, setSelectedClass] = useState<ClassType | null>(null);
+    const [selectedClass, setSelectedClass] = useState<ClassType | null>(null);
+    const [selectedScheduledClass, setSelectedScheduledClass] = useState<ScheduledClass | null>(null);
+    const [selectedScheduledClassId, setSelectedScheduledClassId] = useState<string | null>(null);
+
+    
   
   useEffect(() => {
     const defaultClassParam = new URLSearchParams(window.location.search).get('defaultClass');
@@ -28,13 +32,38 @@ function Enroll({ setSelectedPage }: Props) {
     }
 }, []); // Empty dependency array ensures it runs only once when the component mounts
 
-  const handleClassChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
-    const selectedClassName = event.target.value;
-    const selectedClassObject = classes.find((classItem) => classItem.name === selectedClassName);
-    setSelectedClass(selectedClassObject || null);
-  };
+    const handleClassChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
+        const selectedClassName = event.target.value;
+        const selectedClassObject = classes.find((classItem) => classItem.name === selectedClassName);
+        setSelectedClass(selectedClassObject || null);
+
+        // Reset the selected scheduled class when changing the class dropdown
+        setSelectedScheduledClass(null);
+
+        // Reset the value of the scheduled class dropdown to the default option
+        const scheduledClassDropdown = document.getElementById('scheduledClassDropdown') as HTMLSelectElement | null;
+
+        if (scheduledClassDropdown) {
+            scheduledClassDropdown.value = '0';
+        }
+    };
 
 
+    const handleScheduledClassChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
+        const selectedScheduledClassId = event.target.value;
+    
+        if (!selectedScheduledClassId) {
+            // Clear the state when the default option is selected
+            setSelectedScheduledClass(null);
+        } else {
+            const selectedScheduledClassObject = JSON.parse(selectedScheduledClassId);
+            setSelectedScheduledClass(selectedScheduledClassObject || null);
+        }
+    
+        // Update the selected scheduled class id in state
+        setSelectedScheduledClassId(selectedScheduledClassId);
+    };
+    
   const inputStyles = `mb-5 w-full rounded-lg bg-primary-300 px-5 py-3 placeholder-white`;
   
   const {
@@ -51,6 +80,8 @@ function Enroll({ setSelectedPage }: Props) {
         e.preventDefault();
     }
   }
+
+  console.log("selected: " + selectedScheduledClass?.id)
 
 
   return <section id="enroll" className="mx-auto w-5/6 pt-24 pb-32 ">
@@ -109,6 +140,38 @@ function Enroll({ setSelectedPage }: Props) {
                         </option>
                     ))}
                 </select>
+                
+                {selectedScheduledClass && selectedScheduledClass.remainingSeats === 0 && (
+                    <p className="text-primary-500">{t('error.noSeatsAvailable')}</p>
+                )}
+                {selectedClass && selectedClass.scheduledClasses && (
+                    <select
+                        className={inputStyles}
+                        {...register('selectedScheduledClass')}
+                        onChange={handleScheduledClassChange}
+                        value={selectedScheduledClassId || ''}
+                    >
+                        <option value={''}>
+                            {t('enroll.defaultClassSelectionMessage')}
+                        </option>
+                        {selectedClass.scheduledClasses.map((scheduledClass, index) => (
+                            <option
+                                key={index}
+                                value={JSON.stringify({
+                                    id: scheduledClass.id,
+                                    startDate: scheduledClass.startDate,
+                                    startTime: scheduledClass.startTime,
+                                    endTime: scheduledClass.endTime,
+                                    frequency: scheduledClass.frequency,
+                                    dayOfWeek: scheduledClass.dayOfWeek,
+                                    remainingSeats: scheduledClass.remainingSeats
+                                })}
+                            >
+                                {scheduledClass.startDate} {scheduledClass.startTime}-{scheduledClass.endTime}
+                            </option>
+                        ))}
+                    </select>
+                )}
 
                 {errors.name && (
                     <p className="text-primary-500">{errors.name.type === "required" && t(`error.requiredField`)}</p>
@@ -209,26 +272,38 @@ function Enroll({ setSelectedPage }: Props) {
                                 </div>
                             )}
 
-
                             {selectedClass.scheduledClasses && selectedClass.scheduledClasses.length > 0 && (
                                 <div className="mt-4">
                                     <h3 className="text-lg font-semibold mb-3">{t(`enroll.scheduledClasses`)}:</h3>
                                     <div className="flex flex-wrap -mx-3">
-                                        {selectedClass.scheduledClasses.slice(0, 6).map((scheduledStart, index) => (
-                                            <div key={index} className="mb-4 border-l-4 pl-4 border-primary-500 w-full sm:w-1/3 lg:w-1/3">
-                                                <strong>{t(`enroll.class.startDate`)}:</strong> {scheduledStart.startDate} <br />
-                                                <strong>{t(`enroll.class.startTime`)}:</strong> {scheduledStart.startTime} <br />
-                                                <strong>{t(`enroll.class.endTime`)}:</strong> {scheduledStart.endTime} <br />
-                                                <strong>{t(`enroll.class.frequency`)}:</strong> {scheduledStart.frequency} <br />
-                                                <strong>{t(`enroll.class.dayOfWeek`)}:</strong> {scheduledStart.dayOfWeek}
+                                        {selectedClass.scheduledClasses.map((scheduledClass, index) => (
+                                            <div
+                                                key={index}
+                                                className={`mb-4 pl-4 w-full sm:w-1/3 lg:w-1/3 ${
+                                                    scheduledClass.id === selectedScheduledClass?.id
+                                                        ? 'border-l-4 border-green-500 bg-green-100' 
+                                                        : 'border-l-4 border-primary-500'
+                                                }`}
+                                            >
+                                                <strong>
+                                                    {t(`enroll.class.remainingSeats`)}: &nbsp;
+                                                    <span className={`text-${scheduledClass.remainingSeats === 0 ? 'primary-500' : 'green-500'}`}>
+                                                        {scheduledClass.remainingSeats}
+                                                    </span>
+                                                </strong>
+                                                <br />
+                                                <strong>{scheduledClass.frequency}</strong>, {t(`enroll.class.each`)}{' '}
+                                                <strong>{scheduledClass.dayOfWeek} </strong> <br />
+                                                {t(`enroll.class.between`)} <strong>{scheduledClass.startTime} - {scheduledClass.endTime}</strong>
+                                                <br />
+                                                {t(`enroll.class.startDate`)} <strong>{scheduledClass.startDate} </strong>
                                             </div>
                                         ))}
                                     </div>
-                                    {selectedClass.scheduledClasses.length > 6 && (
-                                        <p className="mt-4 text-primary-500">{t(`enroll.scheduledClasses.moreDetails`)}</p>
-                                    )}
                                 </div>
                             )}
+
+
 
 
                             <div className="mt-4">
@@ -241,8 +316,6 @@ function Enroll({ setSelectedPage }: Props) {
                         </div>
                     )}
                 </motion.div>
-
-
             </div>
         </motion.div>
 

@@ -24,6 +24,7 @@
     "weekly": "Weekly",
     "monthly": "Monthly",
     "age": "Age",
+    "interval": "Interval",
     "home.textMessage": "Courses specially designed for children by specialists in the field.",
     "benefits.title": "What we offer?",
     "benefits.one.title": "Experienced Trainers",
@@ -76,17 +77,23 @@
     "footer.contactus.title": "Contact Us",
     "footer.contactus.paragraph.first": "For detailed inquiries please call the followin number:",
     "enroll.scheduledClasses": "Scheduled Classes",
-    "enroll.class.startDate": "Start Date",
+    "enroll.class.startDate": "starting from",
     "enroll.class.startTime": "Start Time",
     "enroll.class.endTime": "End Time",
     "enroll.class.frequency": "Frequency",
     "enroll.class.dayOfWeek": "Day of Week",
+    "enroll.class.each": "each",
     "enroll.class.age": "Age",
+    "enroll.class.between": "between",
+    "enroll.class.remainingSeats": "Remaining seats",
+    "enroll.class.lastSeatAvailable": "LAST AVAILABLE SEAT",
     "enroll.scheduledClasses.moreDetails": "For more scheduled classes, inquire about future dates.",
+    "enroll.defaultClassSelectionMessage": "No class selected from the scheduled classes",
     "error.requiredField": "This field is required.",
     "error.max100Chars": "Max length is 100 char.",
     "error.max2000Chars": "Max length is 2000 char.",
     "error.invalidEmail": "Invalid email address.",
-    "error.invalidPhoneNumber": "Invalid phone number."
+    "error.invalidPhoneNumber": "Invalid phone number.",
+    "error.noSeatsAvailable": "No available seats for this class"
   }
   
