@@ -3,10 +3,7 @@ import useMediaQuery from '@/hooks/useMediaQuery'
 import ActionButton from '@/shared/ActionButton'
 import HomePageTextRo from "@/assets/ro/HomePageText.png"
 import HomePageTextEN from "@/assets/en/HomePageText.png"
-import HomePageGraphic from "@/assets/HomePageGraphic.png"
-import SponsorRedBull from "@/assets/SponsorRedBull.png"
-import SponsorForbes from "@/assets/SponsorForbes.png"
-import SponsorFortune from "@/assets/SponsorFortune.png"
+import HomePageGraphic from "@/assets/HomePageGraphic_school.png"
 import AnchorLink from 'react-anchor-link-smooth-scroll'
 import { motion } from 'framer-motion'
 import { useTranslation } from 'react-i18next';
