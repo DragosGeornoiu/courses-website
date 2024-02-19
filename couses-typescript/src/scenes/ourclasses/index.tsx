@@ -27,20 +27,20 @@ const OurClasses = ({ setSelectedPage }: Props) => {
     dots: true,
     infinite: false,
     speed: 500,
-    slidesToShow: 4,
-    slidesToScroll: 3,
+    slidesToShow: 3,
+    slidesToScroll: 2,
   };
 
   const sliderSettingsSmallScreen = {
     dots: true,
     infinite: false,
     speed: 500,
-    slidesToShow: 2,
+    slidesToShow: 1,
     slidesToScroll: 1,
   };
 
   return (
-    <section id="ourclasses" className="w-full bg-primary-100 py-40">
+    <section id="ourclasses"  className="mx-auto min-h-full w-5/6 py-20">
       <motion.div>
         <motion.div>
           <div className="md:w-3/5">
