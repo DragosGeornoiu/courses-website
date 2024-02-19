@@ -1,7 +1,7 @@
 import { SelectedPage } from '@/shared/types'
 import useMediaQuery from '@/hooks/useMediaQuery'
 import ActionButton from '@/shared/ActionButton'
-import HomePageTextRo from "@/assets/ro/HomePageText.png"
+import HomePageTextRo from "@/assets/ro/school_academy_homepage_text.png"
 import HomePageTextEN from "@/assets/en/HomePageText.png"
 import HomePageGraphic from "@/assets/HomePageGraphic_school.png"
 import AnchorLink from 'react-anchor-link-smooth-scroll'
@@ -46,7 +46,7 @@ const Home = ({setSelectedPage}: Props) => {
                     }}
                 >
                     <div className="relative">
-                        <div className="before:absolute before:-top-20 before:-left-20 before:z-[-1] md:before:content-evolvetext">
+                        <div className="before:absolute before:-top-20 before:-left-20 before:z-[-1] md:before:content-backgroundtext">
                             <img alt="home-page-text" src={imageSrc}/>
                         </div>
                     </div>

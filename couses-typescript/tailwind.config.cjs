@@ -20,14 +20,14 @@ export default {
       },
       backgroundImage: (theme) => ({
         "gradiend-yellowred": "linear-gradient(90def, #FF616A 0%, #FFC837 100%)",
-        "mobile-home": "url('./assets/HomePageGraphic.png')"
+        "mobile-home": "url('./assets/HomePageGraphic_school.png')"
       }),
       fontFamily: {
         dmsans: ["DM Sans", "sans-serif"],
         montserrat: ["Montserrat", "sans-serif"]
       },
       content: {
-        evolvetext: "url('./assets/EvolveText.png')",
+        backgroundtext: "url('./assets/school_academy_hompage_background_text.png')",
         abstractwaves: "url('./assets/AbstractWaves.png')",
         sparkes: "url('./assets/Sparkles.png')",
         circles: "url('./assets/Circles.png')",

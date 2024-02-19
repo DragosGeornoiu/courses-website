@@ -140,7 +140,7 @@ function ContactUs({ setSelectedPage }: Props) {
                         visible: { opacity: 1, x: 0},
                     }}
                 >
-                    <div className="md:before:content-evolvetext w-full before:absolute before:-bottom-20 before:-right-10 before:z-[-1]">
+                    <div className="md:before:content-backgroundtext w-full before:absolute before:-bottom-20 before:-right-10 before:z-[-1]">
                         <img 
                             className="w-full"
                             alt="contact-us-page-graphic"

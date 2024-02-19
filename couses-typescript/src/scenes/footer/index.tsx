@@ -1,4 +1,4 @@
-import Logo from "@/assets/Logo.png"
+import Logo from "@/assets/logo.png"
 import { useTranslation } from 'react-i18next';
 
 const Footer = () => {

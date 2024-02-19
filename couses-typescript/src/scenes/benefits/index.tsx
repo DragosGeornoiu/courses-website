@@ -8,7 +8,7 @@ import {
 import { motion } from "framer-motion";
 import Benefit from "./Benefit";
 import ActionButton from "@/shared/ActionButton";
-import BenefitsPageGraphic from "@/assets/BenefitsPageGraphic.png"
+import BenefitsPageGraphic from "@/assets/school_academy_benefits_page.png"
 import { useTranslation } from 'react-i18next';
 
 const container = {
@@ -41,21 +41,21 @@ const Benefits = ({setSelectedPage}: Props) => {
         title: t(`benefits.three.title`),
         description:  t(`benefits.three.description`),
     },
-    {
-        icon: <UserGroupIcon className="h-6 w-6" />,
-        title: t(`benefits.four.title`),
-        description:  t(`benefits.four.description`),
-    },
-    {
-        icon: <UserGroupIcon className="h-6 w-6" />,
-        title: t(`benefits.five.title`),
-        description:  t(`benefits.five.description`),
-    },
-    {
-        icon: <UserGroupIcon className="h-6 w-6" />,
-        title: t(`benefits.six.title`),
-        description:  t(`benefits.six.description`),
-    }
+    // {
+    //     icon: <UserGroupIcon className="h-6 w-6" />,
+    //     title: t(`benefits.four.title`),
+    //     description:  t(`benefits.four.description`),
+    // },
+    // {
+    //     icon: <UserGroupIcon className="h-6 w-6" />,
+    //     title: t(`benefits.five.title`),
+    //     description:  t(`benefits.five.description`),
+    // },
+    // {
+    //     icon: <UserGroupIcon className="h-6 w-6" />,
+    //     title: t(`benefits.six.title`),
+    //     description:  t(`benefits.six.description`),
+    // }
 ]
 
   return <section
