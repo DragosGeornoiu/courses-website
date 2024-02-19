@@ -25,7 +25,7 @@ export interface ScheduledClass {
 export interface ClassType {
   name: string;
   description?: string;
-  image: string;
+  image: string | null;
   price?: string;
   ageInterval?: string;
   scheduledClasses?: ScheduledClass[];
