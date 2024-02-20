@@ -13,7 +13,6 @@ type Props = {
 function Enroll({ setSelectedPage }: Props) {
   const { t } = useTranslation()
 
-  // TODO this list needs to be shared with the one in ourclasses/index.tsx
   const classes = getClassesData()
   const [selectedClass, setSelectedClass] = useState<ClassType | null>(null)
   const [selectedScheduledClass, setSelectedScheduledClass] =
@@ -35,7 +34,7 @@ function Enroll({ setSelectedPage }: Props) {
         target: { value: defaultClassName },
       } as React.ChangeEvent<HTMLSelectElement>)
     }
-  }, []) // Empty dependency array ensures it runs only once when the component mounts
+  }, [])
 
   const handleClassChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
     const selectedClassName = event.target.value
@@ -44,10 +43,8 @@ function Enroll({ setSelectedPage }: Props) {
     )
     setSelectedClass(selectedClassObject || null)
 
-    // Reset the selected scheduled class when changing the class dropdown
     setSelectedScheduledClass(null)
 
-    // Reset the value of the scheduled class dropdown to the default option
     const scheduledClassDropdown = document.getElementById(
       'scheduledClassDropdown',
     ) as HTMLSelectElement | null
@@ -63,14 +60,12 @@ function Enroll({ setSelectedPage }: Props) {
     const selectedScheduledClassId = event.target.value
 
     if (!selectedScheduledClassId) {
-      // Clear the state when the default option is selected
       setSelectedScheduledClass(null)
     } else {
       const selectedScheduledClassObject = JSON.parse(selectedScheduledClassId)
       setSelectedScheduledClass(selectedScheduledClassObject || null)
     }
 
-    // Update the selected scheduled class id in state
     setSelectedScheduledClassId(selectedScheduledClassId)
   }
 
@@ -221,7 +216,7 @@ function Enroll({ setSelectedPage }: Props) {
                 {...register('phoneNumber', {
                   required: true,
                   maxLength: 100,
-                  pattern: /^(\+?\d{1,13}|\d{1,13})$/, // Adjust the pattern according to your needs
+                  pattern: /^(\+?\d{1,13}|\d{1,13})$/,
                 })}
               />
 
@@ -236,7 +231,7 @@ function Enroll({ setSelectedPage }: Props) {
                 type="text"
                 placeholder="EMAIL"
                 {...register('email', {
-                  required: false, // Make it optional
+                  required: false,
                   pattern: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
                 })}
               />

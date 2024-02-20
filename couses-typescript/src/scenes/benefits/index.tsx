@@ -40,22 +40,7 @@ const Benefits = ({setSelectedPage}: Props) => {
         icon: <UserGroupIcon className="h-6 w-6" />,
         title: t(`benefits.three.title`),
         description:  t(`benefits.three.description`),
-    },
-    // {
-    //     icon: <UserGroupIcon className="h-6 w-6" />,
-    //     title: t(`benefits.four.title`),
-    //     description:  t(`benefits.four.description`),
-    // },
-    // {
-    //     icon: <UserGroupIcon className="h-6 w-6" />,
-    //     title: t(`benefits.five.title`),
-    //     description:  t(`benefits.five.description`),
-    // },
-    // {
-    //     icon: <UserGroupIcon className="h-6 w-6" />,
-    //     title: t(`benefits.six.title`),
-    //     description:  t(`benefits.six.description`),
-    // }
+    }
 ]
 
   return <section

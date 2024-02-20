@@ -57,7 +57,7 @@ const OurClasses = ({ setSelectedPage }: Props) => {
                 key={`${item.name}-${index}`}
                 name={item.name}
                 description={item.description}
-                image={item.image}
+                image={item.image || ""}
               />
             ))}
           </Slider>
@@ -68,7 +68,7 @@ const OurClasses = ({ setSelectedPage }: Props) => {
                 key={`${item.name}-${index}`}
                 name={item.name}
                 description={item.description}
-                image={item.image}
+                image={item.image_small || ""}
               />
             ))}
           </Slider>
